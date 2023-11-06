@@ -1,0 +1,16 @@
+body{
+    
+    background-image: url("https://images.pexels.com/photos/531844/pexels-photo-531844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: 100% 1000px;
+    background-repeat: no-repeat;
+    background-color: white;
+
+}
+/* .container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 680px;
+    margin-top: 200px;
+    
+    
+} */
