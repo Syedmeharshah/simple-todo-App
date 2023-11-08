@@ -1,23 +1,46 @@
+let todo = document.querySelector("#txt");
+let ul = document.querySelector("#list");
 
-function add() {
-    let text = document.querySelector("#txt").value;
-    let list = document.querySelector("#list");
-    if (text === "") {
-        alert("Please enter text text");
-    } else {
-        console.log(text);
-        list.innerHTML += `<li>${text}<button onclick="delete1()">Delete</button><button onclick="edit()">edit</button></li>`;
+let arr = [];
+function rendorTodo(){
 
-
+    for (let i = 0; i < arr.length; i++){
+        ul.innerHTML += ` <li>    ${arr[i]}   <button id="edit" onclick="editTodo(${i})">Edit</button>  <button id="delet" onclick="deleteTodo(${i})">Delete</button></li>`
     }
-    document.querySelector("#txt").value = "";
-}
-function delete1() {
 
-    console.log("Deleted")
 }
-function edit() {
+function add() {
+    if(todo.value === ""){
+        alert("Please enter text");
+        return;
+    }
+    ul.innerHTML = "";
+    arr.push(todo.value);
+    console.log(todo.value);
+    rendorTodo();
+    todo.value = "";
+}
+function editTodo(i) {
+    console.log("Edited : " + arr[i]);
+    ul.innerHTML = ""
+    let edit = prompt("Edit your code ");
+    arr.splice(i, 1, edit);
+    console.log("edit");
+    ul.innerHTML = ""
+    rendorTodo();
+    todo.value = "";
+}
 
-    console.log("Edited")
+  
+function deleteTodo(i) {
+    console.log("Delete :" + arr[i] );
+    ul.innerHTML = ""
+    arr.splice(i, 1);
+    console.log(arr);
+    rendorTodo();
+    todo.value = "";
+
+    
 }
+
 
